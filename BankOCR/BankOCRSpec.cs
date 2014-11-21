@@ -17,9 +17,15 @@ namespace BankOCR
         }
 
         [Test]
-        public void should_be_2_accounts()
+        public void should_be_3_accounts()
         {
-            Assert.AreEqual(2, accounts.Count());
+            Assert.AreEqual(3, accounts.Count());
+        }
+
+        [Test]
+        public void first_account_as_string_should_match()
+        {
+            FirstAccount().AsString().Should().Be("234567890");
         }
 
         [Test]
@@ -40,9 +46,33 @@ namespace BankOCR
             FirstAccount().Checksum().Should().Be(200);
         }
 
+        [Test]
+        public void first_two_accounts_are_legible()
+        {
+            FirstAccount().Legible().Should().BeTrue();
+            SecondAccount().Legible().Should().BeTrue();
+        }
+
+        [Test]
+        public void third_account_should_be_invalid()
+        {
+            ThirdAccount().Legible().Should().BeFalse();
+        }
+
+        [Test]
+        public void third_account_as_string_should_match()
+        {
+            ThirdAccount().AsString().Should().Be("?23456789");
+        }
+
+        Account ThirdAccount()
+        {
+            return accounts.Skip(2).First();
+        }
+
         Account SecondAccount()
         {
-            return accounts.Last();
+            return accounts.Skip(1).First();
         }
 
         Account FirstAccount()

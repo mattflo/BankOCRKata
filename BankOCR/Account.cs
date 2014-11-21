@@ -23,6 +23,17 @@ namespace BankOCR
             );
         }
 
+        public string AsString()
+        {
+            var chars = Digits().Select(d =>
+                {
+                    if (d < 0) return "?";
+
+                    return d.ToString();
+                });
+
+            return string.Join("", chars);
+        }
         public IEnumerable<int> Digits()
         {
             return UnMaskedBits().Select(s =>
@@ -44,6 +55,11 @@ namespace BankOCR
         public int Checksum()
         {
             return Enumerable.Range(0, 8).Sum(i => Digits().Skip(i).First() * (9 - i));
+        }
+
+        public bool Legible()
+        {
+            return false == AsString().Contains("?");
         }
     }
 }
