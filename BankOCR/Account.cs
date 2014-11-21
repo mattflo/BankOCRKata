@@ -66,7 +66,7 @@ namespace BankOCR
 
         public int Checksum()
         {
-            return Enumerable.Range(0, 8).Sum(i => Digits().Skip(i).First() * (9 - i));
+            return Enumerable.Range(0, 9).Select(i => Digits().Skip(i).First() * (9 - i)).Sum();
         }
 
         public bool Legible()
