@@ -25,13 +25,13 @@ namespace BankOCR
         [Test]
         public void first_account_as_string_should_match()
         {
-            FirstAccount().AsString().Should().Be("234567890");
+            FirstAccount().AsString().Should().Be("234567880");
         }
 
         [Test]
         public void first_account_digits_should_match()
         {
-            FirstAccount().Digits().Should().Equal(new[] { 2, 3, 4, 5, 6, 7, 8, 9, 0 });
+            FirstAccount().Digits().Should().Equal(new[] { 2, 3, 4, 5, 6, 7, 8, 8, 0 });
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace BankOCR
         [Test]
         public void first_account_checksum_should_be_200()
         {
-            FirstAccount().Checksum().Should().Be(200);
+            FirstAccount().Checksum().Should().Be(198);
         }
 
         [Test]
