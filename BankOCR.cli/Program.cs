@@ -6,14 +6,24 @@ namespace BankOCR.cli
     {
         static void Main(string[] args)
         {
-	    if (args.Length == 0)
-	    {
-	        ShowUsage();
-	        return;
-	    }
-	    var accounts = BankOCR.ReadAccountLines(args[0]);
+            try
+            {
 
-	    accounts.ForEach(Show);
+                if (args.Length == 0)
+                {
+                    ShowUsage();
+                    return;
+                }
+                var accounts = BankOCR.ReadAccountLines(args[0]);
+
+                accounts.ForEach(Show);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An unexpected error occurred.");
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
         }
 
         private static void ShowUsage()
