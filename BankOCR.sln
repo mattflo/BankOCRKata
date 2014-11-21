@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankOCR", "BankOCR\BankOCR.csproj", "{573E8ADC-6DB3-4F9C-A897-F74C6F1720F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankOCR.cli", "BankOCR.cli\BankOCR.cli.csproj", "{683535B2-10DE-46A1-9F95-D960A8BB996F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{573E8ADC-6DB3-4F9C-A897-F74C6F1720F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{573E8ADC-6DB3-4F9C-A897-F74C6F1720F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{573E8ADC-6DB3-4F9C-A897-F74C6F1720F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{683535B2-10DE-46A1-9F95-D960A8BB996F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683535B2-10DE-46A1-9F95-D960A8BB996F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683535B2-10DE-46A1-9F95-D960A8BB996F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683535B2-10DE-46A1-9F95-D960A8BB996F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

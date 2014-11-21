@@ -23,6 +23,18 @@ namespace BankOCR
             );
         }
 
+        public new string ToString()
+        {
+            var warn = string.Empty;
+
+            if (false == Legible())
+                warn = " ILL";
+            else if (Checksum()%11 != 0)
+                warn = " ERR";
+
+            return AsString() + warn;
+        }
+
         public string AsString()
         {
             var chars = Digits().Select(d =>
