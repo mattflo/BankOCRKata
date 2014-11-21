@@ -12,8 +12,9 @@ namespace BankOCR
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    if (line.Length == 0) continue;
-                    yield return new Account(line, sr.ReadLine(), sr.ReadLine());
+                    var account = new Account(line, sr.ReadLine(), sr.ReadLine());
+                    sr.ReadLine();
+                    yield return account;
                 }
             }
         }

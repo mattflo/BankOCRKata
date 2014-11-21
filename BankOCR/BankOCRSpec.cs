@@ -19,7 +19,7 @@ namespace BankOCR
         [Test]
         public void should_be_3_accounts()
         {
-            Assert.AreEqual(3, accounts.Count());
+            Assert.AreEqual(4, accounts.Count());
         }
 
         [Test]
@@ -38,6 +38,12 @@ namespace BankOCR
         public void second_account_digits_should_match()
         {
             SecondAccount().Digits().Should().Equal(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
+        }
+
+        [Test]
+        public void it_considers_every_digit_in_the_checksum()
+        {
+            accounts.Last().Checksum().Should().Be(45);
         }
 
         [Test]

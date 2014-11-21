@@ -17,9 +17,9 @@ namespace BankOCR
         public IEnumerable<string> UnMaskedBits()
         {
             return Enumerable.Range(1, 9).Select(i =>
-		line1.Skip((i - 1) * 3).Take(3).AsString() +
-		line2.Skip((i - 1) * 3).Take(3).AsString() +
-		line3.Skip((i - 1) * 3).Take(3).AsString()
+		line1.Skip((i - 1) * 3).Take(3).AsString(rightPadding: 3) +
+		line2.Skip((i - 1) * 3).Take(3).AsString(rightPadding: 3) +
+		line3.Skip((i - 1) * 3).Take(3).AsString(rightPadding: 3)
             );
         }
 
@@ -29,7 +29,7 @@ namespace BankOCR
 
             if (false == Legible())
                 warn = " ILL";
-            else if (Checksum()%11 != 0)
+            else if (Checksum() % 11 != 0)
                 warn = " ERR";
 
             return AsString() + warn;
