@@ -40,5 +40,10 @@ namespace BankOCR
                     return -1;
                 });
         }
+
+        public int Checksum()
+        {
+            return Enumerable.Range(0, 8).Sum(i => Digits().Skip(i).First() * (9 - i));
+        }
     }
 }

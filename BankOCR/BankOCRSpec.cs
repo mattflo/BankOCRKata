@@ -34,6 +34,12 @@ namespace BankOCR
             SecondAccount().Digits().Should().Equal(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
         }
 
+        [Test]
+        public void first_account_checksum_should_be_200()
+        {
+            FirstAccount().Checksum().Should().Be(200);
+        }
+
         Account SecondAccount()
         {
             return accounts.Last();
