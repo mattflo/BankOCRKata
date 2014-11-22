@@ -3,6 +3,8 @@ BankOCRKata
 ###Dependencies
 1. Visual Studio 2012
 2. .NET 4.5
+3. NUnit (committed with the project)
+4. Fluent Assertions (committed with the project)
 
 ###Getting Started
 1. Open BankOCR.sln in Visual Studio
