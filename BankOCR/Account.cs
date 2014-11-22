@@ -23,13 +23,13 @@ namespace BankOCR
             );
         }
 
-        public new string ToString()
+        public string Report()
         {
             var warn = string.Empty;
 
             if (false == Legible())
                 warn = " ILL";
-            else if (Checksum() % 11 != 0)
+            else if (false == IsValid())
                 warn = " ERR";
 
             return AsString() + warn;
@@ -72,6 +72,11 @@ namespace BankOCR
         public bool Legible()
         {
             return false == AsString().Contains("?");
+        }
+
+        public bool IsValid()
+        {
+            return Checksum() % 11 == 0;
         }
     }
 }

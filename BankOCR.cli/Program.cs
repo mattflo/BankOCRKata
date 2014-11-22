@@ -8,7 +8,6 @@ namespace BankOCR.cli
         {
             try
             {
-
                 if (args.Length == 0)
                 {
                     ShowUsage();
@@ -33,7 +32,7 @@ namespace BankOCR.cli
 
         private static void Show(Account account)
         {
-            Console.WriteLine(account.ToString());
+            Console.WriteLine(account.Report());
         }
     }
 }

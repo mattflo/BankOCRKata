@@ -17,7 +17,7 @@ namespace BankOCR
         }
 
         [Test]
-        public void should_be_3_accounts()
+        public void should_be_4_accounts()
         {
             Assert.AreEqual(4, accounts.Count());
         }

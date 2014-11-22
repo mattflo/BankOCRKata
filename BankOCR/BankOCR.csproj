@@ -50,11 +50,23 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="BankOCR.cs" />
-    <Compile Include="BankOCRSpec.cs" />
+    <Compile Include="Specs\BankOCRSpec.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specs\UserStory3Spec.cs" />
+    <Compile Include="Specs\UserStory2Spec.cs" />
+    <Compile Include="Specs\UserStory1Spec.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Specs\UserStory3.ocr">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Specs\UserStory2.ocr">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Specs\UserStory1.ocr">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="testFile1.ocr">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
